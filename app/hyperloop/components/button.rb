@@ -18,7 +18,7 @@
     before_mount do
       # any initialization particularly of state variables goes here.
       # this will execute on server (prerendering) and client.
-      mutate.squares Array.new(9, nil)
+      mutate.temp nil
     end
 
     after_mount do
@@ -37,10 +37,9 @@
     def render
       DIV do
         BUTTON(class: 'btn btn-lg')do
-          params.temp
+          state.temp
         end.on(:click) do
-
-            alert("Button clicked")
+            mutate.temp "X"
         end
       end
     end
