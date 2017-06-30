@@ -4,7 +4,7 @@
 
     def render
       DIV do
-        BUTTON(class: 'btn btn-lg')do
+        BUTTON(class: 'btn btn-lg') do
           params.value
             end.on(:click) do
               params.on_handle_click

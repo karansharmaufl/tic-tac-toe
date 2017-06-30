@@ -13,15 +13,17 @@
     end
 
     def click_event(i)
-      squares = state.squares.clone
-      if state.next_turn
-        squares[i]='X'
-      else
-        squares[i]='O'
+      squares = state.squares.clone  
+      if !check_winner and !state.squares[i]
+        if state.next_turn
+          squares[i] = 'X'
+          mutate.next_turn !state.next_turn
+        else
+          squares[i] = 'O'
+          mutate.next_turn !state.next_turn
+        end
       end
       mutate.squares squares
-      mutate.next_turn !state.next_turn
-
     end
 
     def wins
@@ -37,7 +39,7 @@
      ]
     end
 
-    def calculate_winner
+    def check_winner
       winner = nil
       wins.each do |win|
         a=win[0]
@@ -50,18 +52,33 @@
       return winner   
     end
     
-    
+    def full
+      state.squares.all? {|i| !i.nil? }
+    end
   
+    def draw
+      draw = false
+      winner = check_winner
+      if !winner and full
+        draw = true
+      end
+      return draw
+    end
+
     def render
-      winner = calculate_winner
-      message = ""      
+      winner = check_winner
+      message = ""     
+
       if winner
         message = "Winner: #{winner}"
       else
-        if state.next_turn
+        if state.next_turn 
           message = "Current turn: X"
         else
           message = "Current turn: O"
+        end
+        if draw
+          message = "Tie"
         end
       end
       DIV do
@@ -80,6 +97,9 @@
             make_cell(6)
             make_cell(7)
             make_cell(8)
+          end
+          BUTTON(class: 'btn') do
+            "Click me"
           end
       end
     end
