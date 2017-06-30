@@ -73,16 +73,16 @@
         message = "Winner: #{winner}"
       else
         if state.next_turn 
-          message = "Current turn: X"
+          message = "X's turn"
         else
-          message = "Current turn: O"
+          message = "O's turn"
         end
         if draw
           message = "Tie"
         end
       end
-      DIV do
-        H1 do "#{ message }" end
+      DIV(class: 'div-mar-left') do
+        H1(class: 'h1') do "#{ message }" end
           DIV(class: 'row') do
             make_cell(0)
             make_cell(1)
@@ -93,13 +93,16 @@
             make_cell(4)
             make_cell(5)
           end
-          DIV(class: 'row') do
+          DIV(class: 'row ') do
             make_cell(6)
             make_cell(7)
             make_cell(8)
           end
           BUTTON(class: 'btn') do
-            "Click me"
+            "NEW GAME"
+          end.on(:click) do
+            mutate.squares Array.new(9)
+            mutate.next_turn TRUE
           end
       end
     end
