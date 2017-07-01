@@ -70,15 +70,15 @@
       message = ""     
 
       if winner
-        message = "Winner: #{winner}"
+        message = "#{winner} Win's"
       else
         if state.next_turn 
-          message = "X's turn"
+          message = "X's Turn"
         else
-          message = "O's turn"
+          message = "O's Turn"
         end
         if draw
-          message = "Tie"
+          message = "XO - Tie"
         end
       end
       DIV(class: 'div-mar-left') do
@@ -101,7 +101,7 @@
           end
         end
         DIV(class: 'div-btn') do
-          BUTTON(class: 'btn') do
+          BUTTON(class: 'btn-circle') do
             "NEW GAME"
           end.on(:click) do
             mutate.squares Array.new(9)
