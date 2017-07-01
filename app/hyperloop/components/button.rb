@@ -3,8 +3,8 @@
     param :value 
 
     def render
-      DIV do
-        BUTTON(class: 'button') do
+      DIV() do
+        BUTTON(class: 'button' ) do
           params.value
             end.on(:click) do
               params.on_handle_click

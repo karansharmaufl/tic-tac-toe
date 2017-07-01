@@ -83,7 +83,8 @@
       end
       DIV(class: 'div-mar-left') do
         H1(class: 'h1') do "#{ message }" end
-          DIV(class: 'row') do
+        DIV(class: 'container') do
+          DIV(class: 'row div-mar-adj') do
             make_cell(0)
             make_cell(1)
             make_cell(2)
@@ -93,17 +94,20 @@
             make_cell(4)
             make_cell(5)
           end
-          DIV(class: 'row ') do
+          DIV(class: 'row') do
             make_cell(6)
             make_cell(7)
             make_cell(8)
           end
+        end
+        DIV(class: 'div-btn') do
           BUTTON(class: 'btn') do
             "NEW GAME"
           end.on(:click) do
             mutate.squares Array.new(9)
             mutate.next_turn TRUE
           end
+        end
       end
     end
   end

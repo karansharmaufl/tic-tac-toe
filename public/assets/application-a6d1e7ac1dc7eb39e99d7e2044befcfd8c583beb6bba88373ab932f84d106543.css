@@ -1,0 +1,59 @@
+/* line 4, /home/karan/Sites/hyperloop/tic-tac-toe/app/assets/stylesheets/game.scss */
+.button {
+  color: #666666;
+  background-color: #eeeeee;
+  border-color: #eeeeee;
+  font-weight: bolder;
+  font-size: 40px;
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  height: 100px;
+  width: 100px;
+  padding: 0 40px;
+  margin-left: 0;
+  display: inline-block;
+  appearance: none;
+  cursor: pointer;
+  border-color: red;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: .3s;
+  transition-duration: .3s;
+}
+
+/* line 32, /home/karan/Sites/hyperloop/tic-tac-toe/app/assets/stylesheets/game.scss */
+.h1 {
+  color: #666666;
+  margin-left: 80px;
+}
+
+/* line 37, /home/karan/Sites/hyperloop/tic-tac-toe/app/assets/stylesheets/game.scss */
+.div-mar-left {
+  margin-left: 150px;
+}
+
+/* line 41, /home/karan/Sites/hyperloop/tic-tac-toe/app/assets/stylesheets/game.scss */
+.div-mar-bottom {
+  margin-bottom: 0px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
