@@ -4,7 +4,7 @@
     before_mount do
       mutate.squares Array.new(9)
       mutate.next_turn TRUE
-      
+      #@user = current_user
     end
 
     def make_cell(i)
@@ -72,8 +72,8 @@
 
       if winner
         message = "#{winner} Win's"
-        #@user=User.first
-        current_user.update(score: 10)
+        @user=current_user
+        @user.update(score: 10)
       else
         if state.next_turn 
           message = "X's Turn"
