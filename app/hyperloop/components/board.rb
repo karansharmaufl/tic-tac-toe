@@ -4,7 +4,7 @@
     before_mount do
       mutate.squares Array.new(9)
       mutate.next_turn TRUE
-      @user=Hyperloop::Models::User.first
+      @user=current_user
     end
 
     def make_cell(i)
