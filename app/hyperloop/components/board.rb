@@ -73,7 +73,11 @@
       if winner
         message = "#{winner} Win's"
         #@user=current_user
-        puts "#{@user.email}"
+        #puts "#{@user.email}"
+        @user=User.find(Hyperloop::Application.acting_user_id)
+        puts @user.score
+        @user.update(score: 10)
+        puts @user.score
       else
         if state.next_turn 
           message = "X's Turn"
