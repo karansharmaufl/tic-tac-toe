@@ -11,14 +11,14 @@
   <body >
     <p class="notice"> <%=notice%></p>
     <p class="alert"> <%=alert%> </p>
+    <%= yield %>
     <% if user_signed_in? %>
       <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
     <% else %>
-						<ul class="nav navbar-nav pull-right">
-							<li><%= link_to 'Sign up', new_user_registration_path %></li>
-							<li><%= link_to 'Sign in', new_user_session_path %></li>
-						</ul>
+              
+							<button><%= link_to 'Sign up', new_user_registration_path %></button>
+							<button><%= link_to 'Sign in', new_user_session_path %></button>
     <% end %>
-    <%= yield %>
+   
   </body>
 </html>

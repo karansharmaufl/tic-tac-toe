@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   get 'game/button'
 
-  root 'game#board'
-  get 'home/helloworld'
+  get 'game/board'
+  root 'home#helloworld'
 
 
   mount Hyperloop::Engine => '/hyperloop'

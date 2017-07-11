@@ -1,10 +1,8 @@
   class Board < Hyperloop::Component
 
-    #param :message_turn type: String
     before_mount do
       mutate.squares Array.new(9)
       mutate.next_turn TRUE
-      @user=current_user
     end
 
     def make_cell(i)
