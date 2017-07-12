@@ -1,8 +1,7 @@
 class HomeController < ApplicationController
-  def helloworld
+  def welcomepage
     if user_signed_in?
-      redirect_to game_board_url
+      redirect_to main_app_url
     end
-  end
-  
+  end  
 end

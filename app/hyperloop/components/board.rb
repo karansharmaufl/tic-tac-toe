@@ -70,12 +70,14 @@
 
       if winner
         message = "#{winner} Win's"
-        #@user=current_user
-        #puts "#{@user.email}"
         @user=User.find(Hyperloop::Application.acting_user_id)
-        puts @user.score
-        @user.update(score: 10)
-        puts @user.score
+        @users=User.all
+        puts "Prev #{@user.score}"
+        @user.update(score: rand(20-100))
+        puts "Upd: #{@user.score}"
+        arr1=@users[0].score
+        puts "Arr1: #{@users[0].score}"
+        puts "Arr2: #{@users[1].score}"
       else
         if state.next_turn 
           message = "X's Turn"
@@ -89,6 +91,7 @@
       DIV(class: 'div-mar-left') do
         H1(class: 'h1') do "#{ message }" end
         DIV(class: 'container') do
+          #NavLink('/welcome/welcome') { 'welcome' }
           DIV(class: 'row div-mar-adj') do
             make_cell(0)
             make_cell(1)
