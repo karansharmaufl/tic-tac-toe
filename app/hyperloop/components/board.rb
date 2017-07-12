@@ -90,13 +90,9 @@
       if winner
         message = "#{winner} Win's"
         @user=User.find(Hyperloop::Application.acting_user_id)
-        @users=User.all
-        puts "Prev #{@user.score}"
-        @user.update(score: rand(20-100))
-        puts "Upd: #{@user.score}"
-        arr1=@users[0].score
-        puts "Arr1: #{@users[0].score}"
-        puts "Arr2: #{@users[1].score}"
+        if winner=='X'
+        @user.update(score: @user.score+1)
+        end
       else
         if state.next_turn 
           message = "X's Turn"
@@ -133,10 +129,8 @@
           BUTTON(class: 'btn-circle') do
             "NEW GAME"
           end.on(:click) do
-            mutate.squares Array.new(9)
-            mutate.next_turn TRUE
+            check_score
           end
-          check_score
         end
       end
     end
