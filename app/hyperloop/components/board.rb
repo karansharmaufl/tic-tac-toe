@@ -3,6 +3,7 @@
     before_mount do
       mutate.squares Array.new(9)
       mutate.next_turn TRUE
+      mutate.scores Array.new(2,0)
     end
 
     def make_cell(i)
@@ -107,8 +108,10 @@
         end
       end
       DIV(class: 'div-mar-left') do
+        DIV(class: 'div-mar-score') do
+          show_score          
+        end
         H1(class: 'h1') do "#{ message }" end
-        show_score
         DIV(class: 'container') do
           DIV(class: 'row div-mar-adj') do
             make_cell(0)
