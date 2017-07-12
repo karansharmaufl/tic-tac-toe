@@ -64,6 +64,24 @@
       return draw
     end
 
+    def show_score
+      Score(x_score: state.scores[0].to_s, y_score: state.scores[1].to_s)
+    end
+
+    def check_score
+      winner = check_winner
+      mutate.squares Array.new(9) 
+      mutate.next_turn TRUE
+      scores = state.scores.clone
+      if winner=='X'
+        scores[0]=scores[0]+1
+        mutate.scores scores
+      elsif winner=='O'
+        scores[1]=scores[1]+1
+        mutate.scores scores
+      end  
+    end
+
     def render
       winner = check_winner
       message = ""     
@@ -90,8 +108,8 @@
       end
       DIV(class: 'div-mar-left') do
         H1(class: 'h1') do "#{ message }" end
+        show_score
         DIV(class: 'container') do
-          #NavLink('/welcome/welcome') { 'welcome' }
           DIV(class: 'row div-mar-adj') do
             make_cell(0)
             make_cell(1)
@@ -115,6 +133,7 @@
             mutate.squares Array.new(9)
             mutate.next_turn TRUE
           end
+          check_score
         end
       end
     end
