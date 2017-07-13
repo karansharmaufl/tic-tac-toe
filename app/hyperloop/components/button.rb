@@ -1,4 +1,4 @@
-  class Button < Hyperloop::Component
+  class Button < Hyperloop::Router::Component
     param :on_handle_click , type: Proc
     param :value 
 

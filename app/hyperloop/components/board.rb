@@ -1,4 +1,4 @@
-  class Board < Hyperloop::Component
+  class Board < Hyperloop::Router::Component
 
     before_mount do
       mutate.squares Array.new(9)

@@ -1,4 +1,4 @@
-class Score < Hyperloop::Component
+class Score < Hyperloop::Router::Component
     param :x_score
     param :y_score
     def render
