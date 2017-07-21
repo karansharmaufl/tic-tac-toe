@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'welcome/highscore'
 
-  #devise_for :users
+  devise_for :users
   get 'game/button'
 
   get 'game/board'
