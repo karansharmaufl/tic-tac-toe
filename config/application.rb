@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module TicTacToe
   class Application < Rails::Application
+    config.hyperloop.auto_config = false
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -19,5 +21,7 @@ module TicTacToe
 
     config.eager_load_paths += %W(#{config.root}/app/hyperloop/operations)
     config.autoload_paths   += %W(#{config.root}/app/hyperloop/operations)
+    config.assets.paths << ::Rails.root.join('app', 'hyperloop').to_s
+    config.assets.paths << ::Rails.root.join('app', 'hyperloop', 'models').to_s
   end
 end
