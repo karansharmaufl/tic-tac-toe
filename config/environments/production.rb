@@ -21,6 +21,8 @@ Rails.application.configure do
   #config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.public_file_server.enabled = true
   #config.serve_static_files = true
+  config.assets.digest = true
+  #config.public_file_server.enabled = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
